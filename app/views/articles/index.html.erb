@@ -1,0 +1,11 @@
+<div class="navbar">
+  <h4><%= link_to "Wiki Silicon Valley", articles_path %></h4>
+  <h4><%= link_to "New Random Character", new_article_path %></h4>
+</div>
+
+<div class="container">
+  <% @articles.each do |article| %>
+    <h4><%= link_to article.title, article_path(article) %></h4>
+    <p><%=  raw Kramdown::Document.new(article.content).to_html  %><p>
+  <% end %>
+</div>

@@ -1,0 +1,14 @@
+<div class="navbar">
+  <h4><%= link_to "Wiki Silicon Valley", articles_path %></h4>
+  <h4><%= link_to "New Random Character", new_article_path %></h4>
+</div>
+
+<%= form_for(@article) do |a| %>
+  <%= a.label :title %>
+  <%= a.text_field :title %>
+
+  <%= a.label :content %>
+  <%= a.text_field :content %>
+
+  <%= a.submit %>
+<% end %>

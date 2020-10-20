@@ -1,0 +1,14 @@
+<div class="navbar">
+  <h4><%= link_to "Wiki Silicon Valley", articles_path %></h4>
+  <h4><%= link_to "New Random Character", new_article_path %></h4>
+</div>
+
+<div class="container">
+  <h4><%= @article.title %></h4>
+  <ul>
+    <li><%= link_to "✐", edit_article_path %></li>
+    <li><%= link_to "🗑", article_path, method: :delete,
+      data: { confirm: "Are you sure?" } %></li>
+  </ul>
+<p><%= raw Kramdown::Document.new(@article.content).to_html  %><p>
+</div>
